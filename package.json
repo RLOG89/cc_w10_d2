@@ -1,0 +1,14 @@
+{
+  "name": "cc_w10_d2",
+  "version": "1.0.0",
+  "description": "TDD shopping basket",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha specs"
+  },
+  "author": "Ross Loggie",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
