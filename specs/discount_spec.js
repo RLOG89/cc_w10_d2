@@ -5,6 +5,7 @@ var customer = require('../customer');
 var assert = require('assert');
 
 describe("Discount", function() {
+
   it('should not discount 10% on totals over £20', function() {
     basket.addItem(items.beer);
     basket.addItem(items.pizza);
@@ -22,7 +23,18 @@ describe("Discount", function() {
     assert.equal(25, discount.loyaltyCard(customer.tam, basket));
   });
   it('should deduct bogof discount on bogof items', function() {
-    
+    basket.empty();
+    basket.addItem(items.pizza);
+    basket.addItem(items.pizza);
+    basket.addItem(items.pizza);
+    basket.addItem(items.curry);
+    basket.addItem(items.curry);
+    basket.addItem(items.curry);
+    basket.addItem(items.beer);
+    basket.addItem(items.beer);
+    basket.addItem(items.beer);
+    assert.equal(69, basket.getCost());
+    assert.equal(51,discount.bOGOF(basket));    
   })
 
 });

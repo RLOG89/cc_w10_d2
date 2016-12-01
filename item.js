@@ -10,9 +10,16 @@ var pizza = {
   bOGOF: true
 };
 
+var curry = {
+  name: "vindaloo",
+  price: 8,
+  bOGOF: true
+}
+
 var items = {
   beer: beer,
   pizza: pizza,
+  curry: curry
 }
 
 module.exports = items;

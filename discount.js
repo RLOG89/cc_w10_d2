@@ -14,22 +14,24 @@ var discount = {
     return total;
   },
   bOGOF: function(basket) {
-  // get count of each item //
-  // get price of each count //
-  // if divisible by 2 then divide total by 2 else 
-  //.includes
-  //basket.items.forEach(item,)
-  //Math.seal
-  var total = 0;
-  for(item of basket.items) {
-    if(item.bOGOF === true) {
-      
-
-      // ((item.count > 2) && (item % 2 === 0))
+    var counts = [];
+    var total = 0;
+    for (item of basket.items) {
+      var itemIndex = counts.indexOf(item);
+      if (item.bOGOF) {
+        if (itemIndex === -1 ) {
+          counts.push(item);
+          total += item.price;
+        }
+        else {
+          counts.splice(itemIndex, 1)
+        }
+      }
+      else total += item.price;
     }
-    total += item.price
+    return total;
   }
-  }
+
 };
 
 module.exports = discount;
